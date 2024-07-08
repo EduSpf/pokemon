@@ -77,7 +77,7 @@ export class ListComponent {
     return arrUnique.length;
   }
   deleteBaralho(id: number){
-    this.criarBaralhoService.deleteBaralho(id)
+
     Swal.fire({
       title: "Deseja Deletar o Baralho?",
       text: "Deseja Deletar o Baralho?",
@@ -88,6 +88,7 @@ export class ListComponent {
       confirmButtonText: "Sim"
     }).then((result) => {
       if (result.isConfirmed) {
+        this.criarBaralhoService.deleteBaralho(id)
         this.getall();
       }
     });
